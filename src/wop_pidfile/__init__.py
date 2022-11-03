@@ -17,6 +17,8 @@ def createPidFile(filename="pidfile.pid", killOldProcess=True):
 			pass
 		except OSError:
 			pass
+		except ValueError:
+			pass
 	with open(filename, "w") as pidfile:
 		pidfile.write(str(os.getpid()))
 	
